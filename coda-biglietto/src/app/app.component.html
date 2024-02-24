@@ -1,0 +1,125 @@
+<div class="box-container">
+  <div class="tabellone">
+    <app-biglietto></app-biglietto>
+  </div>
+
+  <div class="container-ordini">
+    <div class="pezzo">
+      <img
+        src="https://www.vicenzatoday.it/~media/horizontal-hi/18732393975302/mys-asiago-hero-dsk-4.jpg"
+        alt=""
+      />
+      <div class="example-button-container">
+        <button
+          class="bottoni-plus"
+          mat-mini-fab
+          color="accent"
+          aria-label="Aggiungi patatine"
+          (click)="add(0)"
+        >
+            <strong>+1</strong>
+        </button>
+
+        <div class="example-button-container">
+          <button
+            class="bottoni-minus"
+            mat-mini-fab
+            color="accent"
+            aria-label="Elimina patatine"
+            (click)="sub(0)"
+          >
+          <strong>-1</strong>
+          </button>
+        </div>
+      <div class="totale-pezzo" *ngFor="let pezzo of pezzi; index as i">
+        <ng-container *ngIf="i === 0">
+          <input
+            type="text"
+            [(ngModel)]="pezzo.quantita"
+            disabled
+            class="input-bar"
+          />
+        </ng-container>
+      </div>
+    </div>
+    <div class="pezzo">
+      <img
+        src="https://i0.wp.com/www.parliamodicucina.com/wp-content/uploads/2014/08/Soft-drink-parliamo-di-cucina.jpg"
+        alt=""
+      />
+      <div class="example-button-container">
+        <button
+          class="bottoni-plus"
+          mat-mini-fab
+          color="accent"
+          aria-label="Aggiungi patatine"
+          (click)="add(1)"
+        >
+            <strong>+1</strong>
+        </button>
+
+        <div class="example-button-container">
+          <button
+            class="bottoni-minus"
+            mat-mini-fab
+            color="accent"
+            aria-label="Elimina patatine"
+            (click)="sub(1)"
+          >
+          <strong>-1</strong>
+          </button>
+        </div>
+      <div class="totale-pezzo" *ngFor="let pezzo of pezzi; index as i">
+        <ng-container *ngIf="i === 1">
+          <input
+            type="text"
+            [(ngModel)]="pezzo.quantita"
+            disabled
+            class="input-bar"
+          />
+        </ng-container>
+      </div>
+    </div>
+
+    <div class="pezzo">
+      <img
+        src="https://www.mcdonalds.it/sites/default/files/products/meta/lericche-bacon--meta.jpg"
+        alt=""
+      />
+      <div class="example-button-container">
+        <button
+          class="bottoni-plus"
+          mat-mini-fab
+          color="accent"
+          aria-label="Aggiungi patatine"
+          (click)="add(2)"
+        >
+            <strong>+1</strong>
+        </button>
+
+        <div class="example-button-container">
+          <button
+            class="bottoni-minus"
+            mat-mini-fab
+            color="accent"
+            aria-label="Elimina patatine"
+            (click)="sub(2)"
+          >
+          <strong>-1</strong>
+          </button>
+        </div>
+
+        <div class="totale-pezzo" *ngFor="let pezzo of pezzi; index as i">
+          <ng-container *ngIf="i === 2">
+            <input
+              type="text"
+              [(ngModel)]="pezzo.quantita"
+              disabled
+              class="input-bar"
+            />
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

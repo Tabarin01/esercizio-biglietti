@@ -2,7 +2,8 @@
   <div class="tabellone">
     <app-biglietto
       *ngFor="let ordine of ordini"
-      [numeroTicket]="ordine.numero"
+      [ordine]="ordine"
+      (eliminaOrdine)="eliminaOrdine($event)"
     ></app-biglietto>
   </div>
 
@@ -135,7 +136,7 @@
     <div class="invio-ordine">
       <div class="totale">
         Totale:
-        <input type="text" [(ngModel)]="totale" disabled class="input-bar" />
+        <input type="text" [(ngModel)]="tempoTotale" disabled class="input-bar" />
         minuti
       </div>
       <button mat-button color="primary" (click)="sendOrder()">

@@ -10,6 +10,7 @@ export class AppComponent {
 
   ordini: { numero: number; tempo: number }[] = [];
   numeroTicket = 0;
+  tempoTotale: number = 0;
 
   pezzi = [
     { nome: 'Hamburger', tempo: 5, quantita: 0 },
@@ -37,17 +38,26 @@ export class AppComponent {
     }
   }
 
-  totale: number = 0;
-
   sendOrder() {
     let totale = 0;
     for (let pezzo of this.pezzi) {
       totale += pezzo.quantita * pezzo.tempo;
     }
-    this.totale = totale;
+    this.tempoTotale = totale;
     this.numeroTicket++;
     if (totale != 0) {
-      this.ordini.push({ numero: this.numeroTicket, tempo: totale });
+      this.ordini.push({ numero: this.numeroTicket, tempo: this.tempoTotale });
+    }
+  }
+
+  eliminaOrdine(index : number)
+  {
+    for (let i = 0; i < this.ordini.length; i++) {
+      if(this.ordini[i].numero === index)
+      {
+        this.ordini.splice(i,1);
+      }
+      
     }
   }
 }

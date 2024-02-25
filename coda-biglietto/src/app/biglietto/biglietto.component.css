@@ -23,8 +23,6 @@
   justify-content: space-between;
 }
 
-.card .card-top p,
-.card .card-top .card-title,
 .card .card-bottom p,
 .card .card-bottom .card-title {
   margin: 0;

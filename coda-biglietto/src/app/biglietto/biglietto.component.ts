@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-biglietto',
@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./biglietto.component.css'],
 })
 export class BigliettoComponent {
-  numeroOrdine = 'Ciccio';
+  @Input() numeroTicket: number = 0;
+  @Input() ordine: { numero: number; tempo: number } = { numero: 0, tempo: 0 };
 }
+
+
+//BISOGNA FARE UN GRID PER NON FARE USCIRE I BIGLIETTI DAL TABELLONE
+//BISOGNA INCREMENTARE IL NUMERO TICKET
+//BISOGNA SETTARE IL TIMEOUT IN BASE AL TEMPO

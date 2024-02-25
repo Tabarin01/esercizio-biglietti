@@ -1,50 +1,85 @@
 .box-container {
-  background-image: url("https://trainingindustry.com/content/uploads/2020/03/McDonalds-Learning-Experience-3.16.20.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://trainingindustry.com/content/uploads/2020/03/McDonalds-Learning-Experience-3.16.20.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-size: cover;
   width: 100%;
   height: 100vh;
-  overflow: hidden;
 }
 
 .tabellone {
   background-color: white;
-}
-
-.container_ordini {
-  margin-top: 100px;
+  height: 30vh;
+  width: 60%;
+  margin: auto;
   display: flex;
   justify-content: center;
+}
+
+.container-ordini {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   border: 10px solid black;
 }
 
 .example-button-container {
   width: 100%;
-  margin-top: 20px;
-  padding: 10px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .pezzo {
   margin: 30px;
-  width: fit-content;
-  height: fit-content;
+  width: 30%;
+  height: 17vh;
   display: flex;
   justify-content: center;
+  align-items: center;
   border: 5px solid rgb(255, 255, 255);
   background-color: white;
   box-shadow: 0px 0px 20px black;
 }
+.right-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin-right: 10%;
+}
 
 .pezzo img {
-  margin: 5px;
-  width: 150px;
-  height: 110px;
+  margin: 5% 0 5% 5%;
+  width: 70%;
+  height: 8rem;
 }
 
-.bottoni-plus {
-  width: fit-content;
-  height: fit-content;
+.bottoni {
+  width: 200%;
+  height: 3vh;
+  margin: 50%;
 }
 
+.right {
+  width: 20%;
+}
+
+.right input {
+  margin: auto;
+}
 .totale-pezzo {
+  display: flex;
+  justify-content: center;
+}
+
+.invio-ordine
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

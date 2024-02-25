@@ -8,13 +8,14 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'coda-biglietto';
 
-  pezzi = [
-    { nome: 'Hamburger', tempo: 20, quantita: 0 },
-    { nome: 'Bibita', tempo: 1, quantita: 0 },
-    { nome: 'Patatine', tempo: 10, quantita: 0 },
-  ];
+  ordini: { numero: number; tempo: number }[] = [];
+  numeroTicket = 0;
 
-  totale: any = [{}];
+  pezzi = [
+    { nome: 'Hamburger', tempo: 5, quantita: 0 },
+    { nome: 'Bibita', tempo: 1, quantita: 0 },
+    { nome: 'Patatine', tempo: 2, quantita: 0 },
+  ];
 
   add(i: number) {
     for (let index = 0; index < this.pezzi.length; index++) {
@@ -35,4 +36,21 @@ export class AppComponent {
       }
     }
   }
+
+  totale: number = 0;
+
+  sendOrder() {
+    let totale = 0;
+    for (let pezzo of this.pezzi) {
+      totale += pezzo.quantita * pezzo.tempo;
+    }
+    this.totale = totale;
+    this.numeroTicket++;
+    if (totale != 0) {
+      this.ordini.push({ numero: this.numeroTicket, tempo: totale });
+    }
+  }
 }
+//BISOGNA FARE UN GRID PER NON FARE USCIRE I BIGLIETTI DAL TABELLONE
+//BISOGNA INCREMENTARE IL NUMERO TICKET
+//BISOGNA SETTARE IL TIMEOUT IN BASE AL TEMPO

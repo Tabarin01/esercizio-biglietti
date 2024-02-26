@@ -17,6 +17,7 @@ export class AppComponent {
     { nome: 'Hamburger', tempo: 5, quantita: 0 },
     { nome: 'Bibita', tempo: 1, quantita: 0 },
     { nome: 'Patatine', tempo: 2, quantita: 0 },
+    { nome: 'Salse', tempo: 0.5, quantita: 0 },
   ];
 
   add(i: number) {
@@ -50,7 +51,7 @@ export class AppComponent {
     } else if (this.ordini.length < this.maxOrders) {
       this.numeroTicket++;
       this.ordini.push({ numero: this.numeroTicket, tempo: this.tempoTotale });
-      //this.resetOrdine();
+      this.resetOrdine();
     } else {
       alert('Limite massimo di ordini raggiunto, chiudi gli ordini');
     }
@@ -70,4 +71,3 @@ export class AppComponent {
     }
   }
 }
-

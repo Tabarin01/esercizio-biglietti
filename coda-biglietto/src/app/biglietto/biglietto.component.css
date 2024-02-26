@@ -9,8 +9,8 @@
   width: 150px;
   margin-bottom: 15px;
   transition: border-color 0.3s ease;
-  display: inline-block; /* Visualizza le card su una riga orizzontale */
-  vertical-align: top; /* Allinea le card in cima */
+  display: inline-block;
+  vertical-align: top;
 }
 
 .card-content {
@@ -34,11 +34,11 @@
 .button-card {
   background-color: transparent;
   border: none;
-  color: #ffffff;
   cursor: pointer;
   font-size: 16px;
   padding: 0;
   pointer-events: none;
+  visibility: hidden;
 }
 
 .button-card:hover {
@@ -51,6 +51,7 @@
 }
 
 .button-card-ready {
+  visibility: visible;
   pointer-events: auto;
   color: #4caf50;
   cursor: pointer;

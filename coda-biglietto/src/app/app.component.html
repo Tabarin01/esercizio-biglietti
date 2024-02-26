@@ -133,6 +133,52 @@
         </ng-container>
       </div>
     </div>
+
+    <!--  inizio salsa -->
+    <div class="pezzo">
+      <div class="left">
+        <img
+          src="https://www.mcdonalds.it/sites/default/files/product_category/meta/salse_hero_meta.jpg"
+          alt=""
+        />
+      </div>
+      <div class="right-btn">
+        <div class="example-button-container">
+          <button
+            class="bottoni"
+            mat-mini-fab
+            color="accent"
+            aria-label="Aggiungi salse"
+            (click)="add(3)"
+          >
+            <strong>+1</strong>
+          </button>
+        </div>
+
+        <div class="example-button-container">
+          <button
+            class="bottoni"
+            mat-mini-fab
+            color="accent"
+            aria-label="Elimina salse"
+            (click)="sub(2)"
+          >
+            <strong>-1</strong>
+          </button>
+        </div>
+      </div>
+      <div class="totale-pezzo" *ngFor="let pezzo of pezzi; index as i">
+        <ng-container *ngIf="i === 3">
+          <input
+            type="text"
+            [(ngModel)]="pezzo.quantita"
+            disabled
+            class="input-bar"
+          />
+        </ng-container>
+      </div>
+    </div>
+    <!--  fine salsa -->
   </div>
 
   <div class="invio-ordine">

@@ -1,67 +1,57 @@
 .card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px;
   width: 150px;
-  background: #fff480;
-  color: black;
-  position: relative;
-  border-radius: 2.5em;
-  padding: 2em;
-  transition: transform 0.4s ease;
+  margin-bottom: 15px;
+  transition: border-color 0.3s ease;
+  display: inline-block; /* Visualizza le card su una riga orizzontale */
+  vertical-align: top; /* Allinea le card in cima */
 }
 
-.card .card-content {
+.card-content {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 5em;
-  height: 100%;
-  transition: transform 0.4s ease;
 }
 
-.card .card-top,
-.card .card-bottom {
+.card-top {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
-.card .card-bottom p,
-.card .card-bottom .card-title {
+.card-image {
+  text-align: center;
+}
+
+.card p {
   margin: 0;
 }
 
-.card .card-top p,
-.card .card-bottom p {
-  font-weight: 600;
-}
-
-.card .card-bottom {
-  align-items: flex-end;
-}
-
-.card .card-image {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  display: grid;
-  place-items: center;
+.button-card {
+  background-color: transparent;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 0;
   pointer-events: none;
 }
 
-.card .card-image svg {
-  width: 4em;
-  height: 4em;
-  transition: transform 0.4s ease;
+.button-card:hover {
+  color: #f00;
 }
 
 .orderReady {
-  background-color: green;
-}
-
-.button-card {
-  display: none;
+  border-color: #4caf50;
+  border-radius: 12px;
 }
 
 .button-card-ready {
-  display: flex;
+  pointer-events: auto;
+  color: #4caf50;
+  cursor: pointer;
 }

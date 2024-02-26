@@ -1,11 +1,17 @@
 <div class="card" [ngClass]="isReady ? 'orderReady' : ''">
   <div class="card-content">
     <div class="card-top">
-      <button [ngClass]="isReady ? 'button-card-ready' : ''" class="button-card" (click)="deleteOrder()">x</button>
+      <button
+        [ngClass]="isReady ? 'button-card-ready' : ''"
+        class="button-card"
+        (click)="deleteOrder()"
+      >
+        x
+      </button>
     </div>
     <div class="card-image">
       <p>
-        <strong>{{ ordine.numero }} | {{ ordine.tempo }}</strong>
+        <strong>00{{ ordine.numero }}</strong>
       </p>
     </div>
   </div>

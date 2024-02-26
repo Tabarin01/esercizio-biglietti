@@ -5,81 +5,128 @@
   background-attachment: fixed;
   background-size: cover;
   width: 100%;
-  height: 100vh;
+  height: 100%;
 }
 
 .tabellone {
-  background-color: white;
-  height: 30vh;
-  width: 60%;
-  margin: auto;
-  display: flex;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  overflow: auto;
+  max-height: 400px;
   justify-content: center;
+}
+
+/* Stile per i singoli ordini (app-biglietto) */
+app-biglietto {
+  margin-bottom: 10px;
+}
+
+/* Reset CSS */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
 }
 
 .container-ordini {
-  margin: auto;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  border: 10px solid black;
-}
-
-.example-button-container {
-  width: 100%;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
 }
 
 .pezzo {
-  margin: 30px;
-  width: 30%;
-  height: 17vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 5px solid rgb(255, 255, 255);
-  background-color: white;
-  box-shadow: 0px 0px 20px black;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 300px;
+  max-width: 300px;
 }
-.right-btn {
+
+.pezzo .left {
+  flex: 1;
+  overflow: hidden;
+}
+
+.pezzo .left img {
+  width: 100%;
+  height: 200px;
+}
+.pezzo .right-btn {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+.pezzo .totale-pezzo {
+  padding: 10px;
+}
+
+.input-bar {
+  width: 50px;
   text-align: center;
-  justify-content: center;
-  margin-right: 10%;
 }
 
-.pezzo img {
-  margin: 5% 0 5% 5%;
-  width: 70%;
-  height: 8rem;
+.invio-ordine {
+  text-align: center;
+  margin: 5% 35% 10% 35%;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 20px;
 }
 
+.invio-ordine .totale {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.invio-ordine .input-bar {
+  width: 50px;
+  text-align: center;
+}
+.invio-ordine button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.totale {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Button Styles */
 .bottoni {
-  width: 200%;
-  height: 3vh;
-  margin: 50%;
+  margin-left: 5px;
+  cursor: pointer;
 }
 
-.right {
-  width: 20%;
+/* Media Query for responsiveness */
+@media screen and (max-width: 768px) {
+  .pezzo {
+    width: calc(50% - 20px);
+  }
 }
 
-.right input {
-  margin: auto;
-}
-.totale-pezzo {
-  display: flex;
-  justify-content: center;
-}
-
-.invio-ordine
-{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+@media screen and (max-width: 480px) {
+  .pezzo {
+    width: 100%;
+  }
 }

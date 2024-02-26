@@ -11,6 +11,7 @@ export class AppComponent {
   ordini: { numero: number; tempo: number }[] = [];
   numeroTicket = 0;
   tempoTotale: number = 0;
+  maxOrders = 16;
 
   pezzi = [
     { nome: 'Hamburger', tempo: 5, quantita: 0 },
@@ -44,23 +45,29 @@ export class AppComponent {
       totale += pezzo.quantita * pezzo.tempo;
     }
     this.tempoTotale = totale;
-    this.numeroTicket++;
-    if (totale != 0) {
+    if (totale == 0) {
+      alert('Devi aggiungere ordini');
+    } else if (this.ordini.length < this.maxOrders) {
+      this.numeroTicket++;
       this.ordini.push({ numero: this.numeroTicket, tempo: this.tempoTotale });
+      //this.resetOrdine();
+    } else {
+      alert('Limite massimo di ordini raggiunto, chiudi gli ordini');
     }
   }
 
-  eliminaOrdine(index : number)
-  {
+  resetOrdine() {
+    for (let pezzo of this.pezzi) {
+      pezzo.quantita = 0;
+    }
+  }
+
+  eliminaOrdine(index: number) {
     for (let i = 0; i < this.ordini.length; i++) {
-      if(this.ordini[i].numero === index)
-      {
-        this.ordini.splice(i,1);
+      if (this.ordini[i].numero === index) {
+        this.ordini.splice(i, 1);
       }
-      
     }
   }
 }
-//BISOGNA FARE UN GRID PER NON FARE USCIRE I BIGLIETTI DAL TABELLONE
-//BISOGNA INCREMENTARE IL NUMERO TICKET
-//BISOGNA SETTARE IL TIMEOUT IN BASE AL TEMPO
+
